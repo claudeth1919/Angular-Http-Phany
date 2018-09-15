@@ -1,23 +1,28 @@
 import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { BuscadorComponent } from './buscador/buscador.component';
-import { AppComponent } from './app.component';
+import { DetallesComponent } from './detalles/detalles.component';
+import { InicioComponent } from './inicio/inicio.component';
+
+
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/inicio', pathMatch: 'full' },
-  // { path: 'inicio', component: AppComponent },
- // { path: 'detail/:id', component: BuscadorComponent },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: 'inicio', component: InicioComponent },
+  { path: 'detalles', component: DetallesComponent },
   { path: 'buscador', component: BuscadorComponent }
 ];
 
 
 @NgModule({
   imports: [
-    // CommonModule,
+    CommonModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [ RouterModule ],
+  exports: [
+    RouterModule
+  ],
   declarations: []
 })
 export class AppRoutingModule {}

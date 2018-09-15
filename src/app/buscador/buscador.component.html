@@ -1,3 +1,21 @@
-<p>
-  buscador works!
-</p>
+<!-- <link href="node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet"> -->
+    <mat-card>
+      <form class="example-form">
+          <mat-form-field>
+            <input matInput placeholder="Busca tu personaje favorito"  [ngModelOptions]="{standalone: true}" [(ngModel)]="name" (keyup)="onNameKeyUp ($event)">
+          </mat-form-field>
+      </form>
+    </mat-card>
+    <mat-card>
+      <mat-list>
+         <h3 matSubheader>Personajes</h3>
+         <mat-divider></mat-divider>
+         <mat-list-item *ngFor="let personaje of personajes ">
+            <h4 matLine>{{personaje.name}}</h4>
+         </mat-list-item>
+         <mat-divider></mat-divider>
+      </mat-list>
+    </mat-card>
+
+<mat-spinner >
+<!-- <mat-divider></mat-divider> -->
