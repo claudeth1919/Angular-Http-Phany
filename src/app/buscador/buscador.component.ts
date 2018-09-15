@@ -16,6 +16,7 @@ export class BuscadorComponent implements OnInit {
   personajes:Array<JSON> ;
   personajesTemp:Array<JSON> ;
   myControl = new FormControl();
+  public isCargando:boolean = true;
 
   constructor (private httpClient: HttpClient){
     this.personajes = new Array();
@@ -25,7 +26,7 @@ export class BuscadorComponent implements OnInit {
 
     ngOnInit() {
       // if(localStorage.getItem('datos')!=null||localStorage.getItem('datos')!=undefined){
-      //    this.getData();
+         this.getData();
       //     localStorage.setItem("datos", this.personajesTemp.join(""));
       //     console.log(this.personajesTemp.join(","));
       // }else{
@@ -78,6 +79,7 @@ export class BuscadorComponent implements OnInit {
         }
       );
       console.log(this.personajes);
+      this.isCargando = false;
       this.personajesTemp = this.personajes;
     }
 

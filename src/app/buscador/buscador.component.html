@@ -1,8 +1,8 @@
 <!-- <link href="node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet"> -->
-    <mat-card>
-      <form class="example-form">
-          <mat-form-field>
-            <input matInput placeholder="Busca tu personaje favorito"  [ngModelOptions]="{standalone: true}" [(ngModel)]="name" (keyup)="onNameKeyUp ($event)">
+    <mat-card width="100%">
+      <form width="100%">
+          <mat-form-field >
+            <input matInput maxlength="100" size="10" placeholder="Busca tu personaje favorito"  [ngModelOptions]="{standalone: true}" [(ngModel)]="name" (keyup)="onNameKeyUp ($event)">
           </mat-form-field>
       </form>
     </mat-card>
@@ -17,5 +17,5 @@
       </mat-list>
     </mat-card>
 
-<mat-spinner >
+<mat-spinner  *ngIf="isCargando">
 <!-- <mat-divider></mat-divider> -->
